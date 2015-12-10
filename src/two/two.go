@@ -1,5 +1,12 @@
 package two
 
-import "three"
+import "encoding/json"
 
-type A three.A
+type A struct {
+	b    *B
+	json json.RawMessage
+}
+
+type B struct {
+	a A
+}
